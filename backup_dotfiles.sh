@@ -1,38 +1,27 @@
-
 #!/bin/bash
 
-# Define paths to sync
-TRACKED_REPO="$HOME/spdotfiles"
-DATE=$(date +%F_%T)
+set -e
 
-echo "🔁 Backing up at $DATE..."
+echo "📦 Backing up your selected dotfiles..."
 
-# List of files/directories to sync
-declare -a FILES_TO_BACKUP=(
-  "$HOME/.zshrc"
-  "$HOME/.config"
-  "$HOME/.scripts"
-  "$HOME/.python/scripts"
-  "$HOME/scripts"
-)
+# Define your repo base
+REPO_DIR="$HOME/spdotfiles"
 
-# Rsync each one to the repo with preserving structure
-for path in "${FILES_TO_BACKUP[@]}"; do
-  if [ -e "$path" ]; then
-    dest="$TRACKED_REPO/backup${path}"
-    mkdir -p "$(dirname "$dest")"
-    rsync -a --delete "$path/" "$dest/"
-    echo "✅ Synced: $path → $dest"
-  else
-    echo "⚠️ Skipped (not found): $path"
-  fi
-done
+# Create required dirs in repo if missing
+mkdir -p "$REPO_DIR/home/.python/scripts"
+mkdir -p "$REPO_DIR/home/.config/scripts"
+mkdir -p "$REPO_DIR/home/.config/zathura"
+mkdir -p "$REPO_DIR/home/.config/nvim"
+mkdir -p "$REPO_DIR/home/.config/geany"
 
-# Stage, commit, and push
-cd "$TRACKED_REPO" || exit 1
-git add .
-git commit -m "📦 Auto backup on $DATE"
-git push origin main
+# Copy the files/folders
+cp -r "$HOME/.python/scripts/"       "$REPO_DIR/home/.python/"
+cp -r "$HOME/.config/scripts/"       "$REPO_DIR/home/.config/"
+cp -r "$HOME/.config/zathura/"       "$REPO_DIR/home/.config/"
+cp -r "$HOME/.config/nvim/"          "$REPO_DIR/home/.config/"
+cp -r "$HOME/.config/geany/"         "$REPO_DIR/home/.config/"
+cp "$HOME/.zshrc"                    "$REPO_DIR/home/"
+cp "$HOME/.xinitrc"                  "$REPO_DIR/home/"
 
-echo "✅ Backup complete and pushed!"
+echo "✅ Done. Dotfiles backed up to $REPO_DIR"
 
