@@ -1,0 +1,7 @@
+[Unit]
+Description=Backup dotfiles to GitHub
+
+[Service]
+Type=oneshot
+ExecStart=%h/spdotfiles/backup_dotfiles.sh
+

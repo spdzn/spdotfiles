@@ -1,0 +1,21 @@
+{
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "description": "Automatically rejects cookie popups on websites",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAogi5RosdkM6JlhnKjfwakUZPh+daCZOeaixEZyL3eH43B+i5j33x33Mq0Kj6tnNiILCQQoyAA3Hia1gW8fuLTw7zXOyie+F7cASk599bq9h9JbeMANcNts6PvkSdEEyZSv0AoS0P2B/AwbFCQUU8UM+1WFWzrLAhXAxfvfawQ4Vt5OWFreVqD96pYmI2n9Zb4lQqFwZGiwEQhv9FED3fEKHrfe/44RrSjljsF4/R4o5aJC4oVzvetJHDF64Q7Ykz8WMsny78VdGMwXpY1PL9RlfW5wcJJyF9eNRRHu6uglxDFS/iveppe2pn5Avh84ec7BEdCFCOSZv+9BpttcI2DQIDAQAB",
+   "manifest_version": 3,
+   "name": "Reject Cookies",
+   "permissions": [ "activeTab", "sidePanel", "tabs" ],
+   "side_panel": {
+      "default_path": "sidepanel.html"
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.3"
+}

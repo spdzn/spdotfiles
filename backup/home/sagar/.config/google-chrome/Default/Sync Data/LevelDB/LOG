@@ -1,0 +1,6 @@
+2025/07/29-12:51:57.285 2901 Reusing MANIFEST /home/sagar/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+2025/07/29-12:51:57.292 2901 Recovering log #3
+2025/07/29-12:51:57.306 2901 Reusing old log /home/sagar/.config/google-chrome/Default/Sync Data/LevelDB/000003.log 
+2025/07/29-12:52:24.577 2900 Level-0 table #5: started
+2025/07/29-12:52:24.592 2900 Level-0 table #5: 227068 bytes OK
+2025/07/29-12:52:24.615 2900 Delete type=0 #3

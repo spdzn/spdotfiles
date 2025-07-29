@@ -1,21 +1,38 @@
+
 #!/bin/bash
 
-set -e
+# Define paths to sync
+TRACKED_REPO="$HOME/spdotfiles"
+DATE=$(date +%F_%T)
 
-# Where your repo is
-REPO_DIR="$HOME/spdotfiles"
+echo "🔁 Backing up at $DATE..."
 
-# Go to repo
-cd "$REPO_DIR"
+# List of files/directories to sync
+declare -a FILES_TO_BACKUP=(
+  "$HOME/.zshrc"
+  "$HOME/.config"
+  "$HOME/.scripts"
+  "$HOME/.python/scripts"
+  "$HOME/scripts"
+)
 
-# Copy stuff you care about
-cp -r ~/.config "$REPO_DIR/config"
-cp ~/.zshrc "$REPO_DIR/.zshrc"
-cp -r ~/.python/scripts "$REPO_DIR/python-scripts"
-cp -r ~/scripts "$REPO_DIR/scripts"
+# Rsync each one to the repo with preserving structure
+for path in "${FILES_TO_BACKUP[@]}"; do
+  if [ -e "$path" ]; then
+    dest="$TRACKED_REPO/backup${path}"
+    mkdir -p "$(dirname "$dest")"
+    rsync -a --delete "$path/" "$dest/"
+    echo "✅ Synced: $path → $dest"
+  else
+    echo "⚠️ Skipped (not found): $path"
+  fi
+done
 
-# Git stuff
+# Stage, commit, and push
+cd "$TRACKED_REPO" || exit 1
 git add .
-git commit -m "🔄 Auto backup on $(date '+%Y-%m-%d %H:%M:%S')"
-git push
+git commit -m "📦 Auto backup on $DATE"
+git push origin main
+
+echo "✅ Backup complete and pushed!"
 

@@ -1,0 +1,5 @@
+[Added Associations]
+application/x-shellscript=geany.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+text/plain=geany.desktop;
+image/png=feh.desktop;
