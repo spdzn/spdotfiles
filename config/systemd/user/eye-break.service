@@ -1,0 +1,9 @@
+[Unit]
+Description=Eye Break Reminder Script
+
+[Service]
+ExecStart=/home/sagar/.local/bin/eye-break.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

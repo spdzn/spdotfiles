@@ -1,0 +1,12 @@
+[Unit]
+Description=Markdown to PDF Auto Watcher
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/markdown_watcher.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+

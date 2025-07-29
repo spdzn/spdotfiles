@@ -1,0 +1,8 @@
+2025/07/29-12:52:12.590 290f Creating DB /home/sagar/.config/google-chrome/Default/IndexedDB/https_www.remnote.com_0.indexeddb.leveldb since it was missing.
+2025/07/29-12:52:12.617 290f Reusing MANIFEST /home/sagar/.config/google-chrome/Default/IndexedDB/https_www.remnote.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/29-12:52:16.830 2901 Level-0 table #5: started
+2025/07/29-12:52:16.853 2901 Level-0 table #5: 226500 bytes OK
+2025/07/29-12:52:16.868 2901 Delete type=0 #3
+2025/07/29-12:52:17.141 2902 Level-0 table #7: started
+2025/07/29-12:52:17.157 2902 Level-0 table #7: 236577 bytes OK
+2025/07/29-12:52:17.178 2902 Delete type=0 #4

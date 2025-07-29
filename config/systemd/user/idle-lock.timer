@@ -1,0 +1,11 @@
+[Unit]
+Description=Run idle-lock script every minute
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min
+Unit=idle-lock.service
+
+[Install]
+WantedBy=timers.target
+

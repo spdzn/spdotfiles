@@ -1,0 +1,6 @@
+2025/07/29-12:53:08.810 2900 Creating DB /home/sagar/.config/google-chrome/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb since it was missing.
+2025/07/29-12:53:08.832 2900 Reusing MANIFEST /home/sagar/.config/google-chrome/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/29-12:53:09.522 2900 Level-0 table #5: started
+2025/07/29-12:53:09.545 2900 Level-0 table #5: 22656 bytes OK
+2025/07/29-12:53:09.566 2900 Delete type=0 #3
+2025/07/29-12:53:09.568 2900 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
