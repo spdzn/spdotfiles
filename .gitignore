@@ -1,0 +1,57 @@
+# Ignore Chrome cache and junk
+config/google-chrome/**/Cookies
+config/google-chrome/**/History*
+config/google-chrome/**/Cache/
+config/google-chrome/**/GPUCache/
+config/google-chrome/**/*.pma
+config/google-chrome/**/LOG*
+config/google-chrome/**/Local Storage/
+config/google-chrome/**/Session Storage/
+config/google-chrome/**/SharedStorage*
+config/google-chrome/**/WebStorage/
+config/google-chrome/**/Dawn*/ 
+config/google-chrome/**/ShaderCache/
+config/google-chrome/**/GCM*/ 
+config/google-chrome/**/Extensions/
+config/google-chrome/**/*.ldb
+config/google-chrome/**/Sessions/
+config/google-chrome/**/Platform Notifications/
+config/google-chrome/Default/Preferences  # Optional; keep if riced manually
+
+# Ignore LibreOffice crash & temp files
+config/libreoffice/**/crash/
+config/libreoffice/**/registrymodifications.pack
+
+# Ignore temp/stream files
+*.bak
+*.log
+*.db
+*.pma
+*.lock
+*.wal
+*.swp
+*.swo
+*.tmp
+*.old
+*.xcu
+*.zwc
+*.zsh_history
+config/*/.goutputstream-*
+
+# Ignore zsh dumps
+config/zsh/zcompdump*
+config/zsh/zhistory
+
+# Geany session temp
+config/geany/.goutputstream-*
+home/.config/geany/.goutputstream-*
+
+# Yazi temp autosaves
+config/yazi/*.toml-*
+
+# NuGet and .NET SDK junk
+config/NuGet/
+
+# DConf binary db
+config/dconf/user
+
